@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.60.3
+FROM jenkins/jenkins
 USER root
 RUN apt-get update
 RUN apt-get -y install \
@@ -16,7 +16,7 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io
-#RUN usermod -aG docker jenkins/
+#RUN usermod -aG docker jenkins
 RUN adduser jenkins docker
 RUN chmod 777 /usr/bin/docker
-USER jenkins
+#USER jenkins
