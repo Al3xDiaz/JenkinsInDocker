@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:20.10.3
+FROM jenkins/jenkins
 USER root
 RUN apt-get update
 RUN apt-get -y install \
@@ -16,7 +16,8 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io
+RUN curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+RUN chmod 770 /usr/local/bin/docker-compose
+#RUN adduser jenkins docker
 #RUN usermod -aG docker jenkins
-RUN adduser jenkins docker
-RUN chmod 777 /usr/bin/docker
 #USER jenkins
