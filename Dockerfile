@@ -18,6 +18,10 @@ RUN apt-get update
 RUN apt-get -y install docker-ce docker-ce-cli containerd.io
 RUN curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod 770 /usr/local/bin/docker-compose
+RUN mkdir /root/.ssh/
+#RUN echo -e $HOST_SSH_ID_RSA>/root/.ssh/id_rsa
+COPY ./keys/ /root/.ssh/
+COPY ./slackmessage.sh /var/lib/jenkins/
 #RUN adduser jenkins docker
 #RUN usermod -aG docker jenkins
 #USER jenkins

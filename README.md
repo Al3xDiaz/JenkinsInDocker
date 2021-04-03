@@ -25,6 +25,10 @@
 HOST_WWW=8080
 HOST_OTHER=50000
 HOST_JENKINS_DATA=./jenkins_home
+HOST_SSH_KEYS=./keys
+USERNAME={username slack app}
+WEBHOOK={webhook slack}
+#HOST_SSH_KEYS=~/.ssh/
 #in Windows & Mac
 HOST_DOCKER=//var/run/docker.sock
 #in linux

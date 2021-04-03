@@ -1,6 +1,8 @@
 version: '3.9'
 services:
     myjenkins:
+        env_file:
+            - .env
         build:
             context: ./
         restart: unless-stopped
