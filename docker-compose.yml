@@ -7,7 +7,6 @@ services:
             context: ./
         restart: unless-stopped
         volumes:
-            - ${HOST_DOCKER}:/var/run/docker.sock
             - ${HOST_JENKINS_DATA}:/var/jenkins_home
         ports:
             - "${HOST_WWW}:8080"
